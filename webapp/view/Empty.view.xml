@@ -1,0 +1,20 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="ibm.fin.ar.controller.Empty">
+	<App>
+		<pages>
+			<Page title="{i18n>XTIT_EMPTY}">
+				<content>
+				    <Button text="Wallah" width="100px" id="__button0" icon="sap-icon://accept" press="onWallah"/>
+				</content>
+			<footer>
+			    <Toolbar width="100%" id="__toolbar1">
+			        <content>
+			            <ToolbarSpacer id="__spacer0"/>
+			            <BusyIndicator busyIndicatorDelay="0" text="Please wait..." id="__indicator0"/>
+			            <sap.ushell.ui.footerbar:AddBookmarkButton text="Button" width="100px" icon="sap-icon://add-favorite" xmlns:sap.ushell.ui.footerbar="sap.ushell.ui.footerbar" id="__button3"/>
+			        </content>
+			    </Toolbar>
+			</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,31 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" 
+		  xmlns:f="sap.ui.layout.form"
+		  xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="ibm.fin.ar.controller.Add">
+	<Page title="Create New Product">
+		<content>
+			<f:SimpleForm editable="true">
+				<f:content>
+					<Label text="Product Id"></Label>
+					<Input length="10" value="{anubhavModel>/productData/PRODUCT_ID}"></Input>
+					<Label text="Name"></Label>
+					<Input length="40" value="{anubhavModel>/productData/NAME}"></Input>
+					<Label text="Description"></Label>
+					<Input length="100" value="{anubhavModel>/productData/DESCRIPTION}"></Input>
+					<Label text="Supplier Id"></Label>
+					<Input length="100" valueHelpRequest="onRequest"
+					showValueHelp="true" value="{anubhavModel>/productData/SUPPLIER_ID}"></Input>
+					<Label text="Price"></Label>
+					<Input length="10" value="{anubhavModel>/productData/PRICE}"></Input>
+					<Input length="4"  value="{anubhavModel>/productData/CURRENCY_CODE}"></Input>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button text="Save" type="Accept" press="onSave"/>
+				<Button text="Cancel" type="Reject"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

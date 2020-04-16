@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="/resources/sap-ui-core.js"
+				data-sap-ui-libs="sap.m"
+				data-sap-ui-theme="sap_bluecrystal"
+				data-sap-ui-resourceroots='{
+					"ibm.fin.ar" : "./"
+				}'
+				data-sap-ui-bindingSyntax="complex"
+				></script>
+		<script>
+			//just for testing as we dont have a produtive sap system
+			//right now to deploy and test with launchpad
+			//index html only used for developer testing purpose
+			sap.ui.getCore().attachInit(function(){
+				var oCompCont = new sap.ui.core.ComponentContainer({
+					name: 'ibm.fin.ar'
+				});
+				oCompCont.placeAt("content");
+			});
+			
+		</script>
+	</head>
+	<body class="sapUiBody">
+		<div id="content"></div>
+	</body>
+</html>

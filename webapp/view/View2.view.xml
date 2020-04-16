@@ -1,0 +1,36 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" 
+		  xmlns:f="sap.ui.layout.form"
+		  xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="ibm.fin.ar.controller.View2">
+	<Page title="{i18n>XTIT_PAGE2}">
+		<content>
+			<!--<Button text="back" press="onBack"></Button>-->
+			<ObjectHeader intro="{NAME}" title="{PRODUCT_ID}"
+						 number="{PRICE}" numberUnit="{CURRENCY_CODE}"/>
+			<IconTabBar>
+				<items>
+					<IconTabFilter text="Fruit Details" key="fruit" icon="sap-icon://product" iconColor="Positive" count="5">
+						<core:Fragment fragmentName="ibm.fin.ar.fragments.fruitData" 
+									   type="XML"></core:Fragment>
+						<core:Fragment fragmentName="ibm.fin.ar.fragments.fruitDataChange" 
+									   type="XML"></core:Fragment>
+					</IconTabFilter>
+					<IconTabFilter text="Supplier Details" key="supplier" icon="sap-icon://supplier" iconColor="Negative" count="15">
+						<core:Fragment fragmentName="ibm.fin.ar.fragments.supplierData"
+									   type="XML" />
+					</IconTabFilter>
+					<IconTabFilter text="Cities" key="cities" icon="sap-icon://functional-location" iconColor="Positive" count="12">
+						<core:Fragment fragmentName="ibm.fin.ar.fragments.citiesSelection"
+									   type="XML" />
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button text="Approve" type="Accept" press="onApprove"/>
+				<Button text="Reject" type="Reject"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

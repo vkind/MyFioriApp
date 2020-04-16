@@ -1,0 +1,21 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m"
+					     xmlns:f="sap.ui.layout.form">
+	<f:SimpleForm visible="{= ${mario>/mario} === true ? false : true }">
+		<f:toolbar>
+			<ToolbarSpacer />
+			<Button text="Display" type="Accept" press="onEdit"></Button>
+		</f:toolbar>
+		<f:content>
+			<Label text="name"></Label>
+			<Input value="{name}"></Input>
+			<Label text="availability"></Label>
+			<Input value="{stockStatus}"></Input>
+			<Label text="price"></Label>
+			<Input value="{price}"></Input>
+			<Label text="unit"></Label>
+			<Input value="{currency}"></Input>
+			<Label text="health"></Label>
+			<Input value="{benefit}"></Input>
+		</f:content>
+	</f:SimpleForm>
+</core:FragmentDefinition>

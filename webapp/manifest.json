@@ -1,0 +1,134 @@
+{
+	"_version": "1.6.0",
+	"sap.app": {
+		"id": "ibm.fin.ar",
+		"type": "application",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"ach": "FIN-AR",
+		"dataSources": {
+			"AnubhavService": {
+				"uri": "/sap/opu/odata/sap/ZDEMO_SEP_ODATA_SRV",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		},
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": ["sap_belize"],
+		"icons": {
+			"icon": "sap-icon://accept"
+		}
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "ibm.fin.ar.view.App",
+			"type": "XML",
+			"id": "idApp"
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "ibm.fin.ar.view",
+				"controlId": "myApp"
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "master",
+				"target": ["master"]
+			}, {
+				"pattern": "empty",
+				"name": "detailInit",
+				"target": ["master", "empty"]
+			},{
+				"pattern": "AddProduct",
+				"name": "callAdd",
+				"target": ["master", "add"]
+			},{
+				"pattern": "product/{fruitId}",
+				"name": "detail",
+				"target": ["master", "detail"]
+			}],
+			"targets": {
+				"master": {
+					"viewName": "View1",
+					"viewId": "idMaster",
+					"controlAggregation": "masterPages"
+				},
+				"empty": {
+					"viewName": "Empty",
+					"viewId": "idEmpty",
+					"controlAggregation": "detailPages"
+				},
+				"detail": {
+					"viewName": "View2",
+					"viewId": "idV2",
+					"controlAggregation": "detailPages"
+				},
+				"add": {
+					"viewName": "Add",
+					"viewId": "idAdd",
+					"controlAggregation": "detailPages"
+				}
+			}
+		},
+		"dependencies": {
+			"minUI5Version": "1.56.10",
+			"libs": {
+				"sap.ui.core": {
+					"minVersion": "1.56.10"
+				},
+				"sap.m": {
+					"minVersion": "1.56.10"
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/instyle.css",
+				"id": ""
+			}]
+		},
+		"models": {
+			"anubhavModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "models/mockData/fruits.json",
+				"preload": false
+			},
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {},
+				"uri": "i18n/i18n.properties",
+				"preload": false,
+				"async": true
+			},
+			"": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"dataSource": "AnubhavService",
+				"preload": true
+			}
+		}
+	}
+}
