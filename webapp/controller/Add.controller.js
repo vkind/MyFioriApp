@@ -5,6 +5,8 @@ sap.ui.define([
 ], function(Controller, MessageBox, MessageToast) {
 	"use strict";
 
+init 1.0
+
 	return Controller.extend("ibm.fin.ar.controller.Add", {
 
 		/**
